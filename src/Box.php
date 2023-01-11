@@ -446,8 +446,8 @@ class Box
             $this->im,
             $this->getFontSizeInPoints(),
             0, // Rotate
-            $x,
-            $y,
+            intval(round($x)),
+            intval(round($y)),
             $color->getIndex($this->im),
             $this->fontFace,
             $text
