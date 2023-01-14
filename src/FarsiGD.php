@@ -77,23 +77,23 @@ class FarsiGD {
             $runWay = null;
             @$str1 = $ar[0][$i];
             if (@in_array($ar[0][$i + 1], $this->ignorelist)) {
-                @$str_next = $ar[0][$i + 2];
+                @$str_next = $ar[0][$i + 2] ?? '';
                 if ($i == 2)
-                    $str_back = $ar[0][$i - 2];
+                    $str_back = $ar[0][$i - 2] ?? '';
                 if ($i != 2)
-                    @$str_back = $ar[0][$i - 1];
+                    @$str_back = $ar[0][$i - 1] ?? '';
             }elseif (!@in_array($ar[0][$i - 1], $this->ignorelist)) {
-                $str_next = $ar[0][$i + 1];
+                $str_next = $ar[0][$i + 1] ?? '';
                 if ($i != 0)
-                    $str_back = $ar[0][$i - 1];
+                    $str_back = $ar[0][$i - 1] ?? '';
             }else {
                 if (isset($ar[0][$i + 1]) && !empty($ar[0][$i + 1])) {
                     $str_next = $ar[0][$i + 1];
                 } else {
-                    $str_next = $ar[0][$i - 1];
+                    $str_next = $ar[0][$i - 1] ?? '';
                 }
                 if ($i != 0)
-                    $str_back = $ar[0][$i - 2];
+                    $str_back = $ar[0][$i - 2] ?? '';
             }
             if (!in_array($str1, $this->ignorelist)) {
                 if (array_key_exists($str1, $this->p_chars)) {
